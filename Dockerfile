@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 RUN apt-get update && \
     apt-get install -y git && \
-    git clone https://github.com/fatihbugrakdogan/n8n_workino.git . && \
+    git clone https://github.com/fatihbugrakdogan/n8n_workino.git && \
     npm install
 
 ARG PGPASSWORD
