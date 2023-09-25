@@ -3,9 +3,7 @@ FROM node:14
 WORKDIR /usr/src/app
 
 RUN sudo apt-get update && \
-    sudo apt-get install -y git && \
-    sudo git clone https://github.com/fatihbugrakdogan/n8n_workino.git
-    
+    sudo apt-get install -y git 
 ARG PGPASSWORD
 ARG PGHOST
 ARG PGPORT
