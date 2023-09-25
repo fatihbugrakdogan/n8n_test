@@ -1,4 +1,11 @@
-FROM n8nio/n8n:latest
+FROM node:14
+
+WORKDIR /usr/src/app
+
+RUN apt-get update && \
+    apt-get install -y git && \
+    git clone https://github.com/fatihbugrakdogan/n8n_workino.git . && \
+    npm install
 
 ARG PGPASSWORD
 ARG PGHOST
@@ -14,7 +21,6 @@ ENV DB_POSTGRESDB_USER=$PGUSER
 ENV DB_POSTGRESDB_PASSWORD=$PGPASSWORD
 
 ARG ENCRYPTION_KEY
-
 ENV N8N_ENCRYPTION_KEY=$ENCRYPTION_KEY
 
-CMD ["n8n start"]
+CMD ["n8n", "start"]
