@@ -2,9 +2,9 @@ FROM node:14
 
 WORKDIR /usr/src/app
 
-RUN apt-get update && \
-    apt-get install -y git && \
-    git clone https://github.com/fatihbugrakdogan/n8n_workino.git
+RUN sudo apt-get update && \
+    sudo apt-get install -y git && \
+    sudo git clone https://github.com/fatihbugrakdogan/n8n_workino.git
     
 ARG PGPASSWORD
 ARG PGHOST
